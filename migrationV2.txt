@@ -1,0 +1,103 @@
+Migrations
+
+User
+    - Username
+    - Email
+    - Password
+- A user has user settings
+- A user can have a list with media
+- A user can have multiple custom statuses
+
+User settings
+    - Mode
+- User settings belong to one user
+
+Author
+    - name
+- A author can have multiple media’s
+
+Media type
+    - name
+- Media type is connected to multiple media’s
+
+Tags
+	- name
+- Media can have multiple tags an tags can belong to multiple media
+
+Media
+    - title
+    - Description
+    - published_year
+    - cover
+    - volumes
+- Media can have multiple tags
+- Media can belong in multiple user lists
+- Media can have multiple providers
+- Media can have multiple authors
+
+Media authors
+Connection table between author and media
+
+Media tags
+Connection table between tags and media
+
+scraping type
+    - name
+"search", "latest", "chapterlist","detail"
+
+Scraping scripts
+    - file
+- has a scraping type
+
+Provider
+    - Name
+    - Logo
+    - Website
+    - Online
+- Provider can have multiple media
+- Provider can have multiple scraping scripts
+
+provider scraping scripts
+connection table between provider and scraping scripts
+
+User Media List
+Connection table between user and media to create a list of media, is also connected to to status and custom status
+
+Reading history
+Connection table between user and media to create a list of read media.
+
+Media providers
+Connection table between media and providers
+
+Chapter list
+- Chapter
+- media_provider_id
+
+Media provider chapter list
+Connection between connection table media provider and chapter list
+
+folders
+- name
+table for standard folder names
+
+Custom folder
+- name
+- user_id
+Table for custom folder names for users
+
+
+Reading spot
+- name
+- media_id
+- location
+- image
+- user_id
+Table for reading spots
+
+
+Reading spots uses
+- user_id,
+- reading_spot_id
+- media_id
+- rating
+connection table bewteen users and reading spots
